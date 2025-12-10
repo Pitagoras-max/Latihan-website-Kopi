@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produk - UMKM Kopi Nusantara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kopi Nusantara</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Produk Unggulan Kami</h2>
+        <p>Berikut daftar produk kopi Nusantara yang kami sediakan:</p>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Produk</th>
+                    <th>Ukuran</th>
+                    <th>Harga</th>
+                    <th>Jenis Kopi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kopi Arabika Gayo</td>
+                    <td>250g</td>
+                    <td>Rp 45.000</td>
+                    <td rowspan="2" style="vertical-align: top; background-color: #ffffff;">Arabika</td>
+                </tr>
+                <tr>
+                    <td>Kopi Arabika Petungkriyono</td>
+                    <td>250g</td>
+                    <td>Rp 48.500</td>
+                </tr>
+                <tr>
+                    <td>Kopi Batang</td>
+                    <td>250g</td>
+                    <td>Rp 46.000</td>
+                    <td rowspan="3" style="vertical-align: top; background-color: #ffffff;">Robusta</td>
+                </tr>
+                <tr>
+                    <td>Kopi Robusta Temanggung</td>
+                    <td>250g</td>
+                    <td>Rp 38.000</td>
+                </tr>
+                <tr>
+                    <td>Kopi Linggoasri</td>
+                    <td>225g</td>
+                    <td>Rp 35.000</td>
+                </tr>
+                <tr>
+                    <td>Kopi Liberika Riau</td>
+                    <td>250g</td>
+                    <td>Rp 42.000</td>
+                    <td rowspan="1" style="vertical-align: top; background-color: #ffffff;">Liberika</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center; background-color: #eee;">Semua harga sudah termasuk PPN</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Profil Produk</h3>
+        <div class="card">
+            <img src="images/Kopisiapsaji.png" alt="Kemasan Kopi Arabika" width="300" />
+            <h3>Kopi Arabika Gayo</h3>
+            <p>Kopi khas Aceh dengan aroma segar dan rasa asam yang halus.</p>
+            <h3>Rating Produk: <span id="hasil-rating"></span></h3>
+        </div>
+        <h3>Layanan Unggulan:</h3>
+        <ul id="layanan-list"></ul>
+        <script>
+            let layanan = ["Gratis Ongkir", "Bayar di Tempat", "Garansi 30 Hari"];
+            layanan.forEach(function (item) {
+                let li = document.createElement("li");
+                li.textContent = item;
+                document.getElementById("layanan-list").appendChild(li);
+            });
+        </script>
+        <h3>Form Pemesan</h3>
+        <form onsubmit="return cekForm()">
+            <input type="text" id="namaProduk" placeholder="Nama Produk"><br>
+            <input type="number" id="jumlah" placeholder="Jumlah"><br>
+            <button type="submit">Pesan</button>
+        </form>
+        <script>
+            function cekForm() {
+                let namaProduk = document.getElementById("namaProduk").value;
+                let jumlah = document.getElementById("jumlah").value;
+                if (namaProduk === "" || jumlah === "") {
+                    alert("Semua kolom harus diisi");
+                    return false;
+                }
+                if (jumlah <= 0) {
+                    alert("Jumlah harus lebih dari 0!");
+                    return false;
+                }
+                alert("Pemesanan berhasil dikirim!");
+                return true;
+            }
+        </script>
+        <h3>Dengarkan Cerita Kami</h3>
+        <audio controls>
+            <source src="audio/promosi_coffe_koco.mp3" type="audio/mpeg" />
+            Audio tidak tersedia di browser Anda.
+        </audio>
+        <h3>Lihat Video Kami</h3>
+        <video width="300" height="200" controls>
+            <source src="videos/Permintaan_Video_Promosi_Kopi_Koco.mp4" type="video/mp4" />
+            Video tidak tersedia di browser Anda.
+        </video>
+    </main>
+    <h3>Daftar Wishlist Produk</h3>
+    <form>
+        <input type="text" id="produkInput" placeholder="Nama produk..." />
+        <p>Preview: <span id="previewProduk"></span></p>
+        <button id="tambahan">Tambah Produk</button>
+    </form>
+    <ul id="daftarProduk"></ul>
+    <hr />
+    <label for="temaSelect">Pilih Tema Warna: </label>
+    <select id="temaSelect">
+        <option value="white">Putih</option>
+        <option value="lightblue">Biru Muda</option>
+        <option value="lightyellow">Kuning Muda</option>
+    </select>
+    <footer>
+        <p>&copy; 2025 Kopi Nusantara</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const produkInput = document.getElementById("produkInput");
+            const tambahBtn = document.getElementById("tambahan");
+            const daftarProduk = document.getElementById("daftarProduk");
+            const previewProduk = document.getElementById("previewProduk");
+            const temaSelect = document.getElementById("temaSelect");
+            // Event 1: Tambah Produk ke daftar (click)
+            tambahBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                const namaProduk = produkInput.value.trim();
+                if (namaProduk !== "") {
+                    const li = document.createElement("li");
+                    li.textContent = namaProduk;
+                    // Event Hover (mouseover & mouseout)
+                    li.addEventListener("mouseover", () => (li.style.backgroundColor = "#e0e0e0"));
+                    li.addEventListener("mouseout", () => (li.style.backgroundColor = ""));
+                    // Event Hapus (dblclick)
+                    li.addEventListener("dblclick", () => {
+                        if (confirm("Yakin ingin menghapus produk ini?")) {
+                            li.remove();
+                        }
+                    });
+                    daftarProduk.appendChild(li);
+                    produkInput.value = "";
+                    previewProduk.textContent = "";
+                }
+            });
+            // Event 2: Preview input secara langsung (keyup)
+            produkInput.addEventListener("keyup", function () {
+                previewProduk.textContent = produkInput.value;
+            });
+            // Event 3: Ubah tema background (change)
+            temaSelect.addEventListener("change", function () {
+                document.body.style.backgroundColor = temaSelect.value;
+            });
+        });
+    </script>
+</body>
+</html>

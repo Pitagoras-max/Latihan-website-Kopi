@@ -1,0 +1,155 @@
+/* Galeri kreatif dengan .card */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin: 32px 0;
+}
+
+.card {
+    background: #fffbe7;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(160,82,45,0.10);
+    overflow: hidden;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(160,82,45,0.18);
+}
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    box-shadow: none;
+    margin: 0;
+}
+.card .desc {
+    padding: 16px;
+    font-size: 1.05em;
+    color: #6d4c1b;
+    text-align: center;
+    background: #fff8e1;
+    border-radius: 0 0 16px 16px;
+    min-height: 60px;
+}
+/* style.css untuk UMKM Kopi Koco (root folder) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lato:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(135deg, #f5f5dc 60%, #ffe4b5 100%);
+    color: #333333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #a0522d;
+    color: #fff;
+    text-align: center;
+    padding: 24px 0 12px 0;
+    box-shadow: 0 2px 8px rgba(160,82,45,0.08);
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    margin: 0 0 8px 0;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f0ad4e;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #d9534f;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+section, .container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    margin: 32px auto;
+    padding: 24px;
+    max-width: 900px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+    font-size: 1em;
+}
+
+img, video {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    margin-top: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    section, .container {
+        padding: 10px;
+        margin: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+}

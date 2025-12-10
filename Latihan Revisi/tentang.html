@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - Kopi Nusantara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kopi Nusantara</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Profil Produk</h2>
+        <!--Product card-->
+        <section class="product-card" data-rating="3">
+            <div class="card-image">
+                <img src="images/Kopisiapsaji.png" alt="Kopi Arabika Gay0" />
+            </div>
+
+            <div class="card-body">
+                <h3 class="card-tittle">Kopi Arabika Gayo</h3>
+                <p class="card-desc">Kopi khas Aceh dengan aroma segar dan rasa asam yang halus.</p>
+
+                <div class="card-rating" aria-label="Rating produk">
+                    <h3>Rating Produk: <span id="hasil-rating"></span></h3>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let rating = 4;
+            if (rating >= 4.5) {
+                document.getElementById("hasil-rating").textContent = "★★★★★ Sangat Disarankan";
+            } else if (rating >= 3) {
+                document.getElementById("hasil-rating").textContent = "★★★ Rekomendasi Biasa";
+            } else {
+                document.getElementById("hasil-rating").textContent = "★ Tidak Direkomendasikan";
+            }
+        </script>
+
+        <h3>Produk Unggulan</h3>
+        <uL>
+            <li>Kopi Arabika Gayo</li>
+            <li>Kopi Robusta Temanggung</li>
+            <li>Kopi Liberika Riau</li>
+        </uL>
+
+        <h3>Tahapan Produksi</h3>
+        <ol>
+            <li>Pemetikan buah kopi segar</li>
+            <li>Proses sangrai tradisional</li>
+            <li>Pengemasan dan pengiriman</li>
+        </ol>
+
+        <h3>Kunjungi Kami:</h3>
+        <p><a href="https://instagram.com/kopinusantara" target="_blank">Instagram Kopi Nusantara</a></p>
+
+        <h3>Layanan Unggulan:</h3>
+        <ul id="layanan-list"></ul>
+        <script>
+            let layanan = ["Gratis Ongkir", "Bayar di Tempat", "Garansi 30 Hari"];
+            layanan.forEach(function (item) {
+                let li = document.createElement("li");
+                li.textContent = item;
+                document.getElementById("layanan-list").appendChild(li);
+            });
+        </script>
+
+        <h3>Form Pemesanan</h3>
+        <form onsubmit="return cekForm()">
+            <input type="text" id="namaProduk" placeholder="Nama Produk"><br>
+            <input type="number" id="jumlah" placeholder="Jumlah"><br>
+            <button type="submit">Pesan</button>
+        </form>
+        <script>
+            function cekForm() {
+                let nama = document.getElementById("namaProduk").value;
+                let jumlah = document.getElementById("jumlah").value;
+                if (nama === "" || jumlah === "") {
+                    alert("Semua kolom wajib diisi.");
+                    return false;
+                }
+                if (jumlah <= 0) {
+                    alert("Jumlah harus lebih dari 0");
+                    return false;
+                }
+                alert("Pemesanan berhasil dikirim!");
+                return true;
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kopi Nusantara. Semua hak dilindungi.</p>
+    </footer>
+</body>
+
+</html>

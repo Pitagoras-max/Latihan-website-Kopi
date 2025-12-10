@@ -1,0 +1,108 @@
+/* --- RESET DASAR --- */
+* {
+    box-sizing: border-box; /* Agar padding tidak merusak ukuran lebar elemen */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFF8DC; /* Warna Cream sesuai tema Koco */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Agar footer tetap di bawah jika konten sedikit */
+}
+
+/* --- HEADER & NAVIGASI --- */
+header {
+    background-color: #A0522D; /* Warna Coklat Sienna */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+}
+
+/* Merapikan UL dan LI pada menu */
+nav ul {
+    list-style-type: none; /* Menghilangkan titik bullet */
+    margin: 0;
+    padding: 0;
+    display: flex;         /* Membuat menu berjajar ke samping */
+    justify-content: center; /* Posisi menu di tengah */
+    gap: 20px;             /* Jarak antar menu */
+    flex-wrap: wrap;       /* Agar aman di HP */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Warna Emas saat kursor diarahkan */
+}
+
+/* --- KONTEN UTAMA --- */
+main {
+    flex: 1; /* Mendorong footer ke bawah */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Posisi tengah */
+    text-align: center;
+}
+
+main h2 {
+    color: #A0522D;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    border-bottom: 2px solid #A0522D;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* --- GALERI (SISTEM GRID FLEXBOX) --- */
+.galeri {
+    display: flex;           /* Kunci agar ke samping */
+    justify-content: center; /* Posisi di tengah */
+    flex-wrap: wrap;         /* Turun ke bawah jika layar sempit */
+    gap: 30px;               /* Jarak antar kartu */
+}
+
+/* --- KARTU FOTO (CARD) --- */
+.card {
+    background-color: white;
+    border-radius: 15px;     /* Sudut melengkung */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Efek bayangan timbul */
+    width: 300px;            /* Lebar tetap per kartu */
+    overflow: hidden;        /* Agar gambar tidak keluar dari sudut melengkung */
+    transition: transform 0.3s ease; /* Efek animasi halus */
+}
+
+/* Efek saat kartu disentuh/hover */
+.card:hover {
+    transform: translateY(-10px); /* Kartu naik sedikit */
+}
+
+/* --- PENGATURAN GAMBAR AGAR RAPI --- */
+.card img {
+    width: 100%;             /* Lebar mengikuti kartu (300px) */
+    height: 250px;           /* TINGGI DIPAKSA SAMA */
+    object-fit: cover;       /* Memotong gambar agar pas & tidak gepeng */
+    display: block;          /* Menghilangkan celah putih di bawah gambar */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Kopi Nusantara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Kopi Nusantara</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Hubungi Kami</h2>
+        <p>Silakan isi formulir berikut untuk menghubungi tim Kopi Nusantara:</p>
+
+        <form id="formKontak" action="#" method="post">
+            <label for="nama">Nama:</label><br>
+            <input type="text" id="nama" name="nama" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="tanggal">Tanggal Pengiriman:</label><br>
+            <input type="date" id="tanggal" name="tanggal"><br><br>
+
+            <label>Jenis Kelamin:</label><br>
+            <input type="radio" id="pria" name="jenis_kelamin" value="pria">
+            <label for="pria">Pria</label><br>
+            <input type="radio" id="wanita" name="jenis_kelamin" value="wanita">
+            <label for="wanita">Wanita</label><br><br>
+
+            <label for="file">Pilih File:</label><br>
+            <input type="file" id="file" name="file"><br><br>
+
+            <label for="kategori">Kategori Pesan:</label><br>
+            <select id="kategori" name="kategori">
+                <option value="umum">Umum</option>
+                <option value="produk">Produk</option>
+                <option value="kerjasama">Kerja Sama</option>
+            </select><br><br>
+
+            <label for="pesan">Pesan:</label><br>
+            <textarea id="pesan" name="pesan" rows="5" cols="30"></textarea><br><br>
+
+            <input type="checkbox" id="langganan" name="langganan" value="ya">
+            <label for="langganan">Saya ingin menerima newsletter</label><br><br>
+            
+            <button type="submit">Kirim</button>
+            <button type="reset">Bersihkan</button>
+
+            <p id="errorMsg" style="color:red;"></p>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Kopi Nusantara</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("formKontak");
+            const nama = document.getElementById("nama");
+            const email = document.getElementById("email");
+            const pesan = document.getElementById("pesan");
+            const errorMsg = document.getElementById("errorMsg");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // mencegah reload halaman
+                if (nama.value === "" || email.value === "" || pesan.value === "") {
+                 errorMsg.textContent = "Semua field harus diisi.";
+                } else {
+                 errorMsg.textContent = "";
+                 alert("Pesan berhasil dikirim!");
+                 form.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* =========================================
+   1. SETTING VARIABEL (PALET WARNA)
+   ========================================= */
+:root {
+    --warna-utama: #4B3832;      /* Cokelat Tua (Kopi) - Pengganti bg-dark */
+    --warna-kedua: #854442;      /* Cokelat Kemerahan */
+    --warna-ketiga: #A0522D;     /* Cokelat Sienna */
+    --warna-teks: #BE9B7B;       /* Cream/Emas */
+    --warna-bg-halus: #FFF4E6;   /* Putih tulang background */
+    --warna-putih: #ffffff;
+}
+
+/* =========================================
+   2. GLOBAL STYLE
+   ========================================= */
+body {
+    background-color: var(--warna-bg-halus);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Membuat semua gambar dan video responsif secara default */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Judul Utama */
+h1, h2, h3 {
+    font-family: "Poppins", sans-serif; /* Pastikan font poppins dimuat jika ada */
+    color: var(--warna-utama);
+}
+
+/* Garis Pemisah (HR) */
+hr {
+    border-top: 2px solid var(--warna-teks);
+    opacity: 0.5;
+}
+
+/* =========================================
+   3. NAVBAR & HEADER
+   ========================================= */
+/* Menimpa warna hitam Bootstrap (.bg-dark) dengan warna kopi kita */
+.bg-dark {
+    background-color: var(--warna-utama) !important;
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+    border: 2px solid var(--warna-teks);
+    background-color: white; /* Agar logo transparan terlihat jelas */
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: #FFD700 !important; /* Warna emas saat di-hover */
+}
+
+/* =========================================
+   4. KONTEN UTAMA (MAIN)
+   ========================================= */
+main {
+    padding-bottom: 40px;
+}
+
+/* Class khusus untuk Gambar Logo di halaman depan */
+.welcome-img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Class khusus untuk Video */
+.promo-video {
+    width: 100%;
+    border-radius: 10px;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styling List Tahapan Produksi */
+ol.Produksi {
+    display: inline-block;
+    text-align: left;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    border-left: 5px solid var(--warna-kedua);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+ol.Produksi li {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--warna-utama);
+}
+
+/* --- Kartu Produk (Jika nanti dipakai di halaman produk) --- */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efek naik saat di-hover */
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* =========================================
+   5. KONTAK FORM
+   ========================================= */
+.kontak-form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    padding: 32px;
+    text-align: left;
+}
+
+.kontak-form input,
+.kontak-form select,
+.kontak-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Penting agar padding tidak melebarkan input */
+}
+
+.kontak-form button[type="submit"] {
+    background-color: var(--warna-utama);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.kontak-form button[type="submit"]:hover {
+    background-color: var(--warna-kedua);
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+    /* bg-dark sudah di-override di atas menjadi warna kopi */
+    color: white;
+    margin-top: auto;
+    border-top: 5px solid var(--warna-kedua);
+}
+
+.footer-title {
+    color: var(--warna-teks);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.footer-subtitle {
+    color: var(--warna-teks);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 8px;
+}
+
+.footer-list a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-list a:hover {
+    color: #FFD700;
+    padding-left: 5px; /* Efek geser sedikit saat hover */
+}
+
+/* Social Media Icons */
+.footer-social a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: transform 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+/* Warna warni icon saat hover */
+.footer-social a:hover { transform: scale(1.2); }
+.footer-social a:hover .bi-instagram { color: #E1306C; }
+.footer-social a:hover .bi-whatsapp { color: #25D366; }
+.footer-social a:hover .bi-tiktok { color: #000000; text-shadow: 0 0 2px white; }
+.footer-social a:hover .bi-youtube { color: #FF0000; }
+
+/* Container Peta (Maps) */
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--warna-teks);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+    background-color: #eee;
+}
+
+/* =========================================
+   7. HALAMAN PRODUK (Tambahan)
+   ========================================= */
+/* Transisi halus untuk kartu produk */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Menghilangkan border default agar lebih bersih */
+}
+
+/* Efek saat mouse diarahkan (Hover) */
+.card:hover {
+    transform: translateY(-5px); /* Kartu naik sedikit */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; /* Bayangan lebih dalam */
+}
+
+/* Mengubah warna tombol pesan agar sesuai tema kopi */
+.btn-primary {
+    background-color: var(--warna-utama) !important;
+    border-color: var(--warna-utama) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--warna-kedua) !important;
+    border-color: var(--warna-kedua) !important;
+}
+
+/* Warna harga */
+.text-primary {
+    color: var(--warna-kedua) !important; /* Ganti biru default dengan merah bata/kopi */
+}

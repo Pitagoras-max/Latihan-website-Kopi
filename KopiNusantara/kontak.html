@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Kopi Nusantara</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/form.js"></script>
+    <script type="module" src="js/newsletter.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Kopi Nusantara</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1>Form Kontak</h1>
+            <h2>Hubungi Kami</h2>
+            <p>Silakan isi formulir berikut untuk menghubungi tim Kopi Nusantara:</p>
+
+            <form id="formKontak" action="#" method="post">
+                <label for="nama">Nama:</label><br>
+                <input type="text" id="nama" name="nama" required aria-describedby="errorNama"><br>
+                <span class="error" id="errorNama"></span><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required aria-describedby="errorEmail"><br>
+                <span class="error" id="errorEmail"></span><br><br>
+
+                <label for="kategori">Kategori Pesan:</label><br>
+                <select id="kategori" name="kategori" aria-describedby="errorKategori">
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="umum">Umum</option>
+                    <option value="produk">Produk</option>
+                    <option value="kerjasama">Kerja Sama</option>
+                    <option value="webinar">Webinar</option>
+                </select><br>
+                <span class="error" id="errorKategori"></span><br><br>
+
+                <label for="pesan">Pesan:</label><br>
+                <textarea id="pesan" name="pesan" rows="5" cols="30" aria-describedby="errorPesan"></textarea><br>
+                <span class="error" id="errorPesan"></span><br><br>
+
+                <input type="checkbox" id="langganan" name="langganan" value="ya">
+                <label for="langganan">Saya ingin menerima newsletter</label><br><br>
+
+                <button type="submit">Kirim</button>
+                <p id="errorMsg" style="color:red;"></p>
+            </form>
+
+            <!-- Field tambahan untuk webinar, tersembunyi secara default -->
+            <div id="webinarFields" style="display: none;">
+                <label for="namaLengkap">Nama Lengkap:</label><br>
+                <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Masukkan nama lengkap Anda"
+                    aria-describedby="errorNamaLengkap"><br>
+                <span class="error" id="errorNamaLengkap"></span><br><br>
+
+                <label for="emailWebinar">Email:</label><br>
+                <input type="email" id="emailWebinar" name="emailWebinar" placeholder="Masukkan email Anda"
+                    aria-describedby="errorEmailWebinar"><br>
+                <span class="error" id="errorEmailWebinar"></span><br><br>
+
+                <label for="hpWebinar">No HP:</label><br>
+                <input type="tel" id="hpWebinar" name="hpWebinar" placeholder="Masukkan nomor HP Anda"
+                    aria-describedby="errorHpWebinar"><br>
+                <span class="error" id="errorHpWebinar"></span><br><br>
+
+                <label for="topikWebinar">Pilihan Topik Webinar:</label><br>
+                <select id="topikWebinar" name="topikWebinar" aria-describedby="errorTopikWebinar">
+                    <option value="">-- Pilih Topik --</option>
+                    <option value="kopi">Teknik Pembuatan Kopi</option>
+                    <option value="bisnis">Bisnis Kopi Nusantara</option>
+                    <option value="kesehatan">Manfaat Kopi untuk Kesehatan</option>
+                </select><br>
+                <span class="error" id="errorTopikWebinar"></span><br><br>
+
+                <input type="checkbox" id="persetujuan" name="persetujuan" value="ya">
+                <label for="persetujuan">Saya setuju dengan syarat & ketentuan</label><br>
+                <span class="error" id="errorPersetujuan"></span><br><br>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kopi Nusantara</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("formKontak");
+        const webinarFields = document.getElementById("webinarFields");
+        const kategoriSelect = document.getElementById("kategori");
+
+        // Fungsi untuk menampilkan/menyembunyikan field webinar
+        kategoriSelect.addEventListener("change", function () {
+            if (this.value === "webinar") {
+                webinarFields.style.display = "block";
+            } else {
+                webinarFields.style.display = "none";
+            }
+        });
+
+        // Validasi real-time untuk nama
+        document.getElementById("nama").addEventListener("blur", function () {
+            const errorNama = document.getElementById("errorNama");
+            if (this.value.trim() === "") {
+                errorNama.textContent = "Nama wajib diisi.";
+            } else {
+                errorNama.textContent = "";
+            }
+        });
+
+        // Validasi real-time untuk pesan
+        document.getElementById("pesan").addEventListener("input", function () {
+            const errorPesan = document.getElementById("errorPesan");
+            if (this.value.trim().length < 10) {
+                errorPesan.textContent = "Pesan minimal 10 karakter.";
+            } else {
+                errorPesan.textContent = "";
+            }
+        });
+
+        // Alert untuk newsletter
+        document.getElementById("langganan").addEventListener("change", function () {
+            if (this.checked) {
+                alert("Terima kasih telah berlangganan newsletter!");
+            }
+        });
+
+        // Validasi saat submit
+        form.addEventListener("submit", function (event) {
+            let valid = true;
+            const errorMsg = document.getElementById("errorMsg");
+            errorMsg.textContent = ""; // Reset pesan error
+
+            // Validasi nama
+            const nama = document.getElementById("nama");
+            const errorNama = document.getElementById("errorNama");
+            if (nama.value.trim() === "") {
+                errorNama.textContent = "Nama wajib diisi.";
+                valid = false;
+            } else {
+                errorNama.textContent = "";
+            }
+
+            // Validasi email (lebih fleksibel: menerima domain umum)
+            const email = document.getElementById("email");
+            const errorEmail = document.getElementById("errorEmail");
+            const emailPattern = /^[^ ]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email.value)) {
+                errorEmail.textContent = "Email harus dalam format yang benar (contoh: nama@domain.com).";
+                valid = false;
+            } else {
+                errorEmail.textContent = "";
+            }
+
+            // Validasi kategori
+            const kategori = document.getElementById("kategori");
+            const errorKategori = document.getElementById("errorKategori");
+            if (kategori.value === "") {
+                errorKategori.textContent = "Pilih salah satu kategori.";
+                valid = false;
+            } else {
+                errorKategori.textContent = "";
+            }
+
+            // Validasi pesan
+            const pesan = document.getElementById("pesan");
+            const errorPesan = document.getElementById("errorPesan");
+            if (pesan.value.trim().length < 10) {
+                errorPesan.textContent = "Pesan minimal 10 karakter.";
+                valid = false;
+            } else {
+                errorPesan.textContent = "";
+            }
+
+            // Validasi tambahan untuk webinar jika dipilih
+            if (kategori.value === "webinar") {
+                const namaLengkap = document.getElementById("namaLengkap");
+                const errorNamaLengkap = document.getElementById("errorNamaLengkap");
+                if (namaLengkap.value.trim() === "") {
+                    errorNamaLengkap.textContent = "Nama lengkap wajib diisi untuk webinar.";
+                    valid = false;
+                } else {
+                    errorNamaLengkap.textContent = "";
+                }
+
+                const emailWebinar = document.getElementById("emailWebinar");
+                const errorEmailWebinar = document.getElementById("errorEmailWebinar");
+                if (!emailPattern.test(emailWebinar.value)) {
+                    errorEmailWebinar.textContent = "Email webinar harus dalam format yang benar.";
+                    valid = false;
+                } else {
+                    errorEmailWebinar.textContent = "";
+                }
+
+                const hpWebinar = document.getElementById("hpWebinar");
+                const errorHpWebinar = document.getElementById("errorHpWebinar");
+                if (hpWebinar.value.trim() === "") {
+                    errorHpWebinar.textContent = "No HP wajib diisi untuk webinar.";
+                    valid = false;
+                } else {
+                    errorHpWebinar.textContent = "";
+                }
+
+                const topikWebinar = document.getElementById("topikWebinar");
+                const errorTopikWebinar = document.getElementById("errorTopikWebinar");
+                if (topikWebinar.value === "") {
+                    errorTopikWebinar.textContent = "Pilih topik webinar.";
+                    valid = false;
+                } else {
+                    errorTopikWebinar.textContent = "";
+                }
+
+                const persetujuan = document.getElementById("persetujuan");
+                const errorPersetujuan = document.getElementById("errorPersetujuan");
+                if (!persetujuan.checked) {
+                    errorPersetujuan.textContent = "Anda harus menyetujui syarat & ketentuan.";
+                    valid = false;
+                } else {
+                    errorPersetujuan.textContent = "";
+                }
+            }
+            if (!valid) { 
+                event.preventDefault(); // Gagalkan submit 
+            } else { 
+                // beri komentar pada else disini karena sudah menggunakan form.js 
+                // alert("Pesan berhasil dikirim!"); // form.reset(); }
+
+            }
+        });
+    </script>
+</body>
+
+</html>

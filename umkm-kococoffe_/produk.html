@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produk - Coffee Koco</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="icon" href="images/kopi.koco.png" type="image/x-icon">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/kopi.koco.png" alt="Logo UMKM" width="40" height="40"
+                    class="d-inline-block align-text-top me-2">
+                Coffee Koco
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="produk.html">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Daftar Menu Coffee Koco</h2>
+            <p class="text-muted">Berikut beberapa produk unggulan yang kami sediakan untuk menemani harimu.</p>
+        </div>
+
+        <div class="input-group mb-4 w-50 mx-auto">
+            <span class="input-group-text bg-dark text-white"><i class="bi bi-search"></i></span>
+            <input type="text" id="cari-produk" class="form-control" placeholder="Ketik untuk mencari produk...">
+        </div>
+
+        <div id="hasil-cari" class="alert alert-warning text-center w-50 mx-auto" style="display:none;">
+            Sedang mencari: <strong id="teks-cari"></strong>
+        </div>
+
+        <div class="row g-4 mb-5" id="list-produk">
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="images/Americano.png" class="card-img-top" alt="Americano">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Americano</h5>
+                        <p class="card-text">"Kesederhanaan rasa yang jujur: tegas, murni, dan menyegarkan."</p>
+                        <p class="card-text fw-bold text-danger">Rp 18.000</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="images/Kopi-Kenangan-Koco.png" class="card-img-top" alt="Kenangan Koco">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Kenangan Koco</h5>
+                        <p class="card-text">"Harmoni sempurna antara kopi premium dan susu yang creamy."</p>
+                        <p class="card-text fw-bold text-danger">Rp 22.000</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="images/Cafe_Malt_Latte.png" class="card-img-top" alt="Cafe Malt Latte">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cafe Malt Latte</h5>
+                        <p class="card-text">"Perpaduan unik kopi susu creamy dengan sentuhan rasa malt yang gurih."</p>
+                        <p class="card-text fw-bold text-danger">Rp 24.000</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="images/Ultimate_Latte.png" class="card-img-top" alt="Ultimate Latte">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Ultimate Latte</h5>
+                        <p class="card-text">"Sensasi klasik yang menenangkan dengan kopi pilihan terbaik."</p>
+                        <p class="card-text fw-bold text-danger">Rp 25.000</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="images/Matcha.png" class="card-img-top" alt="Matcha">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Matcha Latte</h5>
+                        <p class="card-text">"Earthy matcha premium dan susu creamy, menyegarkan harimu."</p>
+                        <p class="card-text fw-bold text-danger">Rp 20.000</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="images/Babycchino.png" class="card-img-top" alt="Babycchino">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Babycchino</h5>
+                        <p class="card-text">"Perpaduan susu dan karamel dengan topping foam dan karamel"</p>
+                        <p class="card-text fw-bold text-danger">Rp 19.000</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mb-3" title="Klik ganda untuk menyembunyikan tabel">Daftar Harga Lengkap <small
+                class="text-muted fs-6">(Klik 2x judul ini untuk hide/show)</small></h3>
+        <div class="table-responsive mb-5">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Produk</th>
+                        <th>Milk Option</th>
+                        <th>Harga</th>
+                        <th>Kategori</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Americano</td>
+                        <td>No Milk</td>
+                        <td>Rp 18.000</td>
+                        <td>Coffee</td>
+                    </tr>
+                    <tr>
+                        <td>Kopi Kenangan Koco</td>
+                        <td>Fresh Milk/Oatside Milk</td>
+                        <td>Rp 22.000</td>
+                        <td>Coffee</td>
+                    </tr>
+                    <tr>
+                        <td>Cafe Malt Latte</td>
+                        <td>Fresh Milk/Oatside Milk</td>
+                        <td>Rp 24.000</td>
+                        <td>Coffee</td>
+                    </tr>
+                    <tr>
+                        <td>Ultimate Latte</td>
+                        <td>Fresh Milk/Oatside Milk</td>
+                        <td>Rp 25.000</td>
+                        <td>Coffee</td>
+                    </tr>
+                    <tr>
+                        <td>Matcha</td>
+                        <td>No Milk</td>
+                        <td>Rp 20.000</td>
+                        <td>Non-Coffee</td>
+                    </tr>
+                    <tr>
+                        <td>Babycchino</td>
+                        <td>Fresh Milk/Oatside Milk</td>
+                        <td>Rp 19.000</td>
+                        <td>Non-Coffee</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card bg-light border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4><i class="bi bi-star-fill text-warning"></i> Cek Rekomendasi Menu</h4>
+                        <p class="text-muted small">Bingung mau pesan apa? Cek sesuai seleramu!</p>
+                        <div class="mb-3">
+                            <label for="jenisInput" class="form-label">Jenis Minuman:</label>
+                            <select id="jenisInput" class="form-select">
+                                <option value="kopi">Coffee (Kopi)</option>
+                                <option value="nonkopi">Non-Coffee (Bukan Kopi)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gulaInput" class="form-label">Tingkat Kemanisan:</label>
+                            <select id="gulaInput" class="form-select">
+                                <option value="manis">Sweet (Manis)</option>
+                                <option value="less">Less Sugar (Sedikit Gula)</option>
+                            </select>
+                        </div>
+                        <button id="cekSeleraBtn" class="btn btn-dark w-100">Cek Rekomendasi</button>
+                        <div id="seleraResult" class="mt-3 p-2 text-center" style="display: none; border-radius: 5px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card bg-light border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4><i class="bi bi-calculator"></i> Hitung Pesanan</h4>
+                        <form id="orderForm">
+                            <div class="mb-3">
+                                <label for="harga" class="form-label">Harga Satuan (Rp):</label>
+                                <input type="number" id="harga" class="form-control" value="18000">
+                            </div>
+                            <div class="mb-3">
+                                <label for="jumlah" class="form-label">Jumlah:</label>
+                                <input type="number" id="jumlah" class="form-control" value="1" min="1">
+                            </div>
+                            <button type="submit" class="btn btn-success w-100 mb-2">Hitung Total</button>
+                            <button type="button" id="resetOrderBtn" class="btn btn-outline-danger w-100">Reset</button>
+                        </form>
+                        <p id="totalResult" class="mt-3 fw-bold fs-5 text-center"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-5 p-4 rounded bg-white shadow-sm border">
+            <h3 class="mb-4">Apa Kata Mereka?</h3>
+            <div id="testimoniList" class="row">
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="https://instagram.com/haywdj" target="_blank" class="btn btn-outline-dark btn-lg">
+                <i class="bi bi-instagram"></i> Ikuti Instagram Coffee Koco
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container pb-4">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h3 class="footer-title">COFFEE KOCO</h3>
+                    <p class="footer-text">
+                        Coffee Koco menghadirkan perpaduan cita rasa kopi pilihan dan kreasi kekinian yang pas untuk
+                        menemani setiap momen harimu.
+                    </p>
+
+                    <div class="footer-social mt-3">
+                        <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/6285225282248"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://youtube.com/"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-4">
+                    <h4 class="footer-subtitle">Informasi</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                        <li><a href="produk.html">Produk</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-subtitle">Lokasi Kami</h4>
+                    <p class="small text-white-50">Kunjungi outlet kami di sini:</p>
+
+                    <div class="map-container">
+                        <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?q=-7.031728,109.611774&hl=id&z=16&output=embed">
+                        </iframe>
+                    </div>
+
+                    <div class="mt-2 text-center">
+                        <a href="https://maps.app.goo.gl/Hda29uQDbTLzYJeu5" target="_blank"
+                            class="btn btn-sm btn-outline-light">
+                            <i class="bi bi-geo-alt-fill"></i> Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="border-top pt-3 mt-3 text-center text-white-50">
+                <p class="mb-0">© 2025 Coffee Koco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Webinar Produk - Coffe Koco</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Coffe Koco</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-kontak">
+        <h2>Pendaftaran Webinar Promosi Produk</h2>
+        <p>Isi form berikut untuk mendaftar webinar promosi produk UMKM bersama Coffe Koco.</p>
+
+        <form id="webinarForm">
+
+            <div class="form-group">
+                <label for="wnama">Nama Lengkap:</label>
+                <input type="text" id="wnama" name="wnama" required />
+                <small class="error-msg"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="wemail">Email:</label>
+                <input type="email" id="wemail" name="wemail" required />
+                <small class="error-msg"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="whp">Nomor HP:</label>
+                <input type="text" id="whp" name="whp" required maxlength="15" />
+                <small class="error-msg"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="topik">Topik Webinar:</label>
+                <select id="topik" name="topik" required>
+                    <option value="">-- Pilih Topik --</option>
+                    <option value="Marketing Digital">Marketing Digital</option>
+                    <option value="Branding Produk UMKM">Branding Produk UMKM</option>
+                    <option value="Cara Naikin Omset">Cara Naikin Omset</option>
+                </select>
+                <small class="error-msg"></small>
+            </div>
+
+            <div class="form-group checkbox-area">
+                <input type="checkbox" id="setuju" name="setuju" />
+                <label for="setuju">Saya setuju dengan syarat & ketentuan</label>
+                <small class="error-msg"></small>
+            </div>
+
+            <button type="submit" class="btn-submit">Daftar Sekarang</button>
+
+            <div id="webinarFeedback" class="form-feedback"></div>
+        </form>
+    </main>
+
+    <footer>
+        <p>📍 Coffe Koco — Jl. Jalan No.12</p>
+        <p>📞 0852-2528-2248 | 📧 coffekoco@gmail.com</p>
+        <p>&copy; 2025 Roti Bakar Viero</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("webinarForm");
+            const fields = {
+                nama: document.getElementById("wnama"),
+                email: document.getElementById("wemail"),
+                hp: document.getElementById("whp"),
+                topik: document.getElementById("topik"),
+                setuju: document.getElementById("setuju")
+            };
+
+            const feedback = document.getElementById("webinarFeedback");
+
+            const showError = (input, message) => {
+                const small = input.parentElement.querySelector(".error-msg");
+                small.textContent = message;
+                small.style.color = "red";
+            };
+
+            const clearError = (input) => {
+                const small = input.parentElement.querySelector(".error-msg");
+                small.textContent = "";
+            };
+
+            // VALIDASI REAL-TIME
+            fields.nama.addEventListener("input", () => {
+                if (fields.nama.value.trim().length < 3) {
+                    showError(fields.nama, "Minimal 3 karakter bro.");
+                } else clearError(fields.nama);
+            });
+
+            fields.email.addEventListener("blur", () => {
+                const email = fields.email.value.trim();
+                if (!email.includes("@") || !email.includes(".")) {
+                    showError(fields.email, "Format email salah.");
+                } else if (email.endsWith("@yahoo.com")) {
+                    showError(fields.email, "Email Yahoo tidak diterima 😭");
+                } else clearError(fields.email);
+            });
+
+            fields.hp.addEventListener("input", () => {
+                if (!/^\d+$/.test(fields.hp.value)) {
+                    showError(fields.hp, "Nomor HP hanya angka besti.");
+                } else clearError(fields.hp);
+            });
+
+            fields.topik.addEventListener("change", () => {
+                if (fields.topik.value === "") {
+                    showError(fields.topik, "Pilih topiknya dulu bro.");
+                } else clearError(fields.topik);
+            });
+
+            fields.setuju.addEventListener("change", () => {
+                if (!fields.setuju.checked) {
+                    showError(fields.setuju, "Wajib setuju dulu.");
+                } else clearError(fields.setuju);
+            });
+
+            // VALIDASI SUBMIT
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                let valid = true;
+
+                if (fields.nama.value.trim().length < 3) {
+                    showError(fields.nama, "Minimal 3 karakter.");
+                    valid = false;
+                }
+                if (!fields.email.value.includes("@") || fields.email.value.endsWith("@yahoo.com")) {
+                    showError(fields.email, "Email tidak valid atau Yahoo ditolak.");
+                    valid = false;
+                }
+                if (!/^\d+$/.test(fields.hp.value)) {
+                    showError(fields.hp, "Nomor HP hanya angka.");
+                    valid = false;
+                }
+                if (fields.topik.value === "") {
+                    showError(fields.topik, "Pilih topik!");
+                    valid = false;
+                }
+                if (!fields.setuju.checked) {
+                    showError(fields.setuju, "Harus setuju.");
+                    valid = false;
+                }
+
+                if (!valid) {
+                    feedback.textContent = "Masih ada data yang salah nih bro!";
+                    feedback.className = "form-feedback error visible";
+                    return;
+                }
+
+                feedback.textContent = "Pendaftaran berhasil! 🚀";
+                feedback.className = "form-feedback success visible";
+
+                form.reset();
+            });
+        });
+    </script>
+
+</body>
+</html>

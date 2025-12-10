@@ -1,0 +1,104 @@
+/* === STYLE DASAR === */
+body {
+  margin: 0; /* Hilangkan jarak default di sekitar halaman */
+  font-family: 'Segoe UI', sans-serif; /* Font utama halaman */
+  background: #f9f7f4; /* Warna latar lembut */
+  color: #333; /* Warna teks umum */
+}
+
+/* === NAVBAR === */
+nav {
+  background: #4b2e05; /* Warna coklat tua khas kopi */
+  color: white; /* Warna teks putih */
+  display: flex; /* Flexbox untuk menata logo dan menu sejajar */
+  justify-content: space-between; /* Pisahkan logo kiri dan menu kanan */
+  align-items: center; /* Rata tengah vertikal */
+  padding: 10px 40px; /* Ruang dalam (atas-bawah 10px, kiri-kanan 40px) */
+  position: sticky; /* Navbar tetap di atas saat digulir */
+  top: 0; /* Tempel di bagian atas layar */
+}
+nav .logo { font-size: 1.3em; } /* Perbesar teks logo */
+
+nav ul.menu {
+  display: flex; /* Menyusun menu secara horizontal */
+  list-style: none; /* Hilangkan bullet list */
+  gap: 20px; /* Jarak antar item menu */
+  margin: 0; padding: 0;
+}
+nav ul.menu li a {
+  color: white; /* Warna teks menu */
+  text-decoration: none; /* Hilangkan garis bawah */
+  font-weight: bold; /* Tebalkan teks */
+}
+nav ul.menu li a:hover {
+  border-bottom: 2px solid #f3ca89; /* Efek hover garis bawah warna emas */
+}
+
+/* === HERO SECTION === */
+.hero {
+  position: relative; /* Supaya teks bisa ditumpuk di atas gambar */
+  text-align: center;
+}
+.hero img {
+  width: 100%; /* Gambar memenuhi lebar halaman */
+  height: auto; /* Tinggi otomatis menyesuaikan */
+  filter: brightness(80%); /* Redupkan sedikit supaya teks terlihat jelas */
+}
+.hero-text {
+  position: absolute; /* Menempatkan teks di atas gambar */
+  top: 50%; left: 50%; /* Posisikan ke tengah */
+  transform: translate(-50%, -50%); /* Koreksi posisi agar benar-benar di tengah */
+  color: white; /* Warna teks putih */
+}
+
+/* === SECTION UMUM === */
+section {
+  padding: 40px 20px; /* Jarak isi dengan tepi */
+  text-align: center; /* Rata tengah */
+}
+
+/* === CARD KEUNGGULAN === */
+.card-container {
+  display: flex; /* Menyusun card dalam satu baris */
+  justify-content: center; /* Rata tengah horizontal */
+  gap: 20px; /* Jarak antar card */
+  flex-wrap: wrap; /* Jika layar kecil, card turun ke bawah */
+}
+.card {
+  background: white; /* Warna latar putih */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Bayangan lembut */
+  width: 250px; /* Lebar tetap */
+  padding: 20px; /* Ruang dalam */
+}
+
+/* === TABEL PRODUK === */
+table {
+  width: 80%; /* Lebar tabel 80% dari halaman */
+  margin: 0 auto; /* Tabel di tengah */
+  border-collapse: collapse; /* Hilangkan jarak antar border */
+}
+th, td {
+  border: 1px solid #ccc; /* Garis tabel abu-abu */
+  padding: 12px; /* Ruang dalam tiap sel */
+}
+th {
+  background: #eee; /* Warna latar kolom header */
+}
+
+/* === FOOTER === */
+footer {
+  background: #4b2e05; /* Warna gelap khas kopi */
+  color: white; /* Warna teks putih */
+  padding: 15px; /* Ruang dalam */
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  nav { flex-direction: column; } /* Navbar berubah vertikal di layar kecil */
+  .card-container { 
+    flex-direction: column; /* Card disusun vertikal */
+    align-items: center;
+  }
+  table { width: 100%; } /* Tabel melebar penuh di layar kecil */
+}

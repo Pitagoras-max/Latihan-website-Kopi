@@ -1,0 +1,361 @@
+/* Gaya umum halaman */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fefefe;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #532a10;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* penting! */
+}
+
+.logo img {
+    height: 70px;      /* kecilkan biar nggak narik menu */
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+/* Judul halaman */
+h2 {
+    color: #532a10;
+}
+
+/* Tabel produk */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}
+
+/* Footer lebih menarik */
+footer {
+    background-color: #532a10;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Styling form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+form button[type="submit"] {
+    background-color: #532a10;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #75401b;
+}
+
+/* Error messages (ditambahkan di sini untuk konsistensi dengan form) */
+.error {
+    color: red;
+    font-size: 0.8rem;
+}
+/* Gambar dengan card */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Card container untuk produk atau galeri */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.galeri {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;           /* Memastikan card mengisi tinggi penuh area-nya */
+}
+
+.card-title {
+    min-height: 3rem; /* Kira-kira cukup untuk 2 baris teks */
+    
+    /* Opsional: Jika ingin teksnya rata tengah secara vertikal di dalam kotak min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-top{
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-card {
+    justify-content: center;
+}
+
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .galeri {
+        flex-direction: column;
+        align-items: margin top;
+    }
+
+    .card {
+        max-width: 50%;
+    }
+}
+
+/** CSS sebelumnya */
+/** Bagian nav ada penyesuaian di bawah */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    background-color: #532a10;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-grow: 0.75;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 4px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #de9e4c;
+    border-bottom: 2px solid #de9e4c;
+}
+
+.hero {
+    background: #ffc79c;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+}
+
+.keunggulan,
+.testimoni {
+    padding: 40px 0;
+}
+
+.fitur-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fitur-list li {
+    margin-bottom: 10px;
+    background: #e8ebee;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.testimoni .card {
+    background-color: #fff;
+    padding: 20px;
+    border-left: 5px solid #de9e4c;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin-top: 20px;
+}
+/* Product card styles */
+.product-card {
+    display: flex;
+    gap: 18px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    padding: 16px;
+    max-width: 360px;
+    align-items: flex-start;
+    margin: 12px 0;
+}
+.product-card .card-image img {
+    width: 120px;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.product-card .card-body { flex: 1; color: #222; }
+.product-card .card-title {
+    margin: 0 0 6px 0;
+    font-size: 1.05rem;
+    color: #2f2f2f;
+}
+.product-card .card-desc {
+    margin: 0 0 10px 0;
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.3;
+}
+
+/* Rating */
+.card-rating { display:flex; flex-direction:column; gap:6px; }
+.card-rating .stars { font-size:1rem; color: #f1c40f; letter-spacing:2px; }
+.card-rating .rating-text { color: #333; font-size:0.95rem; }
+.card-rating .recommend { color: #006400; font-weight:600; margin-top:4px; }
+
+/* responsive */
+@media (max-width:520px){
+    .product-card { flex-direction:column; align-items:center; text-align:center; max-width:100%; }
+    .product-card .card-image img { width:180px; }
+}
+
+
